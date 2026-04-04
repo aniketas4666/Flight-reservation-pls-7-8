@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Pull'){
             steps{
-                git branch: 'main', url: 'https://github.com/mayurmwagh/Flight-reservation-pls-7-8.git'
+                git branch: 'main', url: 'https://github.com/aniketas4666/Flight-reservation-pls-7-8.git'
             }
         }
         stage('Build'){
@@ -16,7 +16,7 @@ pipeline{
         }
         stage('QA-Test'){
             steps{
-                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-token') {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar') {
                     sh '''
                         cd FlightReservationApplication
                         mvn sonar:sonar  -Dsonar.projectKey=flight-reservation-backend
@@ -28,9 +28,9 @@ pipeline{
             steps{
                 sh '''
                     cd FlightReservationApplication
-                    docker build -t mayurwagh/flight-reservation-demo:latest .
-                    docker push mayurwagh/flight-reservation-demo:latest
-                    docker rmi mayurwagh/flight-reservation-demo:latest
+                    docker build -t andyas2501/flight-reservation-demo:latest .
+                    docker push andyas2501/flight-reservation-demo:latest
+                    docker rmi andyas2501/flight-reservation-demo:latest
                 '''
             }
         }
