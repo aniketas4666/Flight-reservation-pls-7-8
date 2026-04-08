@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('PULl'){
             steps{
-                git branch: 'main', url: 'https://github.com/mayurmwagh/Flight-reservation-pls-7-8.git'
+                git branch: 'main', url: 'https://github.com/aniketas4666/Flight-reservation-pls-7-8.git'
             }
         }
         stage('BUILD'){
