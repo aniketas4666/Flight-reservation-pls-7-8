@@ -22,7 +22,7 @@ pipeline {
             steps{
                 sh '''
                     cd frontend
-                    aws s3 sync dist/ s3://cbz-frontend-project-bux/
+                    aws s3 sync dist/ s3://flight-reservation-2026/
                 '''
             }
         }
