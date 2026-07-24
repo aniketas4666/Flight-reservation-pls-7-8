@@ -34,8 +34,6 @@ pipeline{
                         sh '''
                             cd FlightReservationApplication
                             docker build -t andyas2501/lucky:latest .
-                            docker push andyas2501/lucky:latest
-                            docker rmi andyas2501/lucky:latest
                         '''
              }
         }
