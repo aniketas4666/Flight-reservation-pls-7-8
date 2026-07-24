@@ -29,7 +29,7 @@ pipeline{
                 }       
             }
         }
-        stage('Docker Build & Push') {
+        stage('Docker Build') {
             steps {
                         sh '''
                             cd FlightReservationApplication
@@ -39,7 +39,7 @@ pipeline{
                         '''
              }
         }
-        stage('Docker Build & Push') {
+        stage('Docker Push') {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
