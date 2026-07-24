@@ -35,7 +35,7 @@ pipeline{
                             cd FlightReservationApplication
                             docker build -t andyas2501/lucky:latest .
                             docker push andyas2501/lucky:latest
-                            docker rmi andyas2501/lucky:latest || true
+                            docker rmi andyas2501/lucky:latest
                         '''
              }
         }
@@ -45,7 +45,7 @@ pipeline{
                     withDockerRegistry(credentialsId: 'docker') {
                         sh '''
                             docker push andyas2501/lucky:latest
-                            docker rmi andyas2501/lucky:latest || true
+                            docker rmi andyas2501/lucky:latest
                         '''
                     }
                 }
