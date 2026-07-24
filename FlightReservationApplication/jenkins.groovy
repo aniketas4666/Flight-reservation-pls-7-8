@@ -32,7 +32,7 @@ pipeline{
         stage('Docker-build'){
             steps{
                 script {
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'docker') {
                 sh '''
                     cd FlightReservationApplication
                     docker build -t andyas2501/lucky:latest .
