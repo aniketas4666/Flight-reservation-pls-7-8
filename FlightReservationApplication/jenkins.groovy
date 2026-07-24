@@ -29,20 +29,20 @@ pipeline{
                 }       
             }
         }
-        stage('Docker-build'){
-            steps{
+        stage('Docker Build & Push') {
+            steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                sh '''
-                    cd FlightReservationApplication
-                    docker build -t andyas2501/lucky:latest .
-                    docker push andyas2501/lucky:latest
-                    docker rmi andyas2501/lucky:latest
-                '''
+                        sh '''
+                            cd FlightReservationApplication
+                            docker build -t andyas2501/lucky:latest .
+                            docker push andyas2501/lucky:latest
+                            docker rmi andyas2501/lucky:latest || true
+                        '''
+                    }
+                }
             }
         }
-     }
- }
         stage('Deploy'){
             steps{
                 sh '''
