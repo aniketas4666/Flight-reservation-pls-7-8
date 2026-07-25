@@ -6,7 +6,7 @@ metadata:
   labels:
     app: flight-reservation-app
 spec:
-  replicas: 5
+  replicas: 7
   selector:
     matchLabels:
       app: flight-reservation-app
