@@ -33,7 +33,7 @@ pipeline{
             steps {
                         sh '''
                             cd FlightReservationApplication
-                            docker build -t andyas2501/lucky:latest .
+                            docker build -t andyas2501/guitar:latest .
                         '''
              }
         }
@@ -42,8 +42,8 @@ pipeline{
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
                         sh '''
-                            docker push andyas2501/lucky:latest
-                            docker rmi andyas2501/lucky:latest
+                            docker push andyas2501/guitar:latest
+                            docker rmi andyas2501/guitar:latest
                         '''
                     }
                 }
