@@ -3,7 +3,7 @@ pipeline{
 
     tools {
         jdk "jdk"
-        maven "mvn"
+        maven "maven"
     }
     stages{
         stage('Pull'){
