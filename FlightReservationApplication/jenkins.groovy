@@ -34,20 +34,10 @@ pipeline{
                         sh '''
                             cd FlightReservationApplication
                             docker build -t andyas2501/guitar:latest .
-                        '''
-             }
-        }
-        stage('Docker Push') {
-            steps {
-                script {
-                    withDockerRegistry(credentialsId: 'docker') {
-                        sh '''
                             docker push andyas2501/guitar:latest
                             docker rmi andyas2501/guitar:latest
                         '''
-                    }
-                }
-            }
+             }
         }
         stage('Deploy'){
             steps{
