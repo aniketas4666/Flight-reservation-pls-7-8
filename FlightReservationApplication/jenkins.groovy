@@ -33,9 +33,9 @@ pipeline{
             steps {
                         sh '''
                             cd FlightReservationApplication
-                            docker build -t andyas2501/jaypur:latest .
-                            docker push andyas2501/jaypur:latest
-                            docker rmi andyas2501/jaypur:latest
+                            docker build -t andyas2501/brezza:latest .
+                            docker push andyas2501/brezza:latest
+                            docker rmi andyas2501/brezza:latest
                         '''
              }
         }
