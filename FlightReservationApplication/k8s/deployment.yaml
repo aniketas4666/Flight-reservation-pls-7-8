@@ -6,7 +6,7 @@ metadata:
   labels:
     app: flight-reservation-app
 spec:
-  replicas: 5
+  replicas: 3
   selector:
     matchLabels:
       app: flight-reservation-app
@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: flight-reservation-app
-        image: andyas2501/jaypur:latest
+        image: andyas2501/brezza:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
