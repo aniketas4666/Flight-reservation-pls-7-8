@@ -21,7 +21,7 @@ pipeline{
         }
         stage('QA-Test'){
             steps{
-                withSonarQubeEnv(installationName: 'sonar-server', credentialsId: 'sonar-scanner') {
+                withSonarQubeEnv(installationName: 'sonar-scanner', credentialsId: 'sonar-scanner') {
                     sh '''
                         cd FlightReservationApplication
                         mvn sonar:sonar  -Dsonar.projectKey=flight-reservation-backend
@@ -33,9 +33,9 @@ pipeline{
             steps {
                         sh '''
                             cd FlightReservationApplication
-                            docker build -t andyas2501/brezza:latest .
-                            docker push andyas2501/brezza:latest
-                            docker rmi andyas2501/brezza:latest
+                            docker build -t andyas2501/goa:latest .
+                            docker push andyas2501/goa:latest
+                            docker rmi andyas2501/goa:latest
                         '''
              }
         }
